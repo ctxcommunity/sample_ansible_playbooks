@@ -1,0 +1,11 @@
+---
+  - name: Install CVAD Session Recording Player
+    hosts: cvad_master_image
+    gather_facts: true
+    vars:
+      cvad_session_recording_player_version: 2103
+    roles:
+      - ctxcommunity.cvad.install_session_recording_player_iso
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

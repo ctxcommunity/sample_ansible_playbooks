@@ -1,0 +1,11 @@
+---
+  ansible_user: automation@MYCOMPANYDOMAIN.COM
+  ansible_password: ThinkofaGreatPassword
+  ansible_become_method: runas
+  ansible_become_user: MCD\automation
+  ansible_become_pass: "{{ ansible_password }}"
+  certificates:
+    wildcard2021:
+      certificate_pfx_file: wildcard2021.pfx
+      certificate_pfx_password: YourPFXImportPassword
+      certificate_pfx_thumbprint: YourCertificateThumbprint

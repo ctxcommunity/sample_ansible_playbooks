@@ -1,0 +1,11 @@
+---
+# Only need if a second disk was provisioned
+  disk_drive_letter: I
+  disk_drive_label: Data
+  disk_number: 0
+
+  app_pdf_xchange_editor_choco_state: present
+  app_pdf_xchange_editor_choco_version: 8.0.343.0
+
+  app_webex_choco_state: present
+  app_webex_choco_version: 40.12.5.14

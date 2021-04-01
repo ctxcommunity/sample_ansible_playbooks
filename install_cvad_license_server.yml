@@ -1,0 +1,18 @@
+---
+  - name: Install CVAD License Server
+    hosts: cvad_license_servers
+    gather_facts: true
+    vars:
+      cvad_license_version: 2103
+    roles:
+      - ctxcommunity.common.secure_winrm
+      - ctxcommunity.common.set_power_plan
+      - ctxcommunity.windows.defender
+      - ctxcommunity.windows.dotnet_48_framework_runtime
+      - ctxcommunity.cvad.install_license_iso
+# Optionally install Microsoft License Server
+      - ctxcommunity.windows.rds_license
+      - ctxcommunity.windows.updates
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

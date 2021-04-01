@@ -1,0 +1,16 @@
+---
+  - name: Install CVAD Director Server
+    hosts: cvad_director_servers
+    gather_facts: true
+    vars:
+      cvad_director_version: 2103
+    roles:
+      - ctxcommunity.common.secure_winrm
+      - ctxcommunity.common.set_power_plan
+      - ctxcommunity.windows.defender
+      - ctxcommunity.windows.dotnet_48_framework_runtime
+      - ctxcommunity.cvad.install_director_iso
+      - ctxcommunity.windows.updates
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

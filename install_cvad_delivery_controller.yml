@@ -1,0 +1,17 @@
+---
+  - name: Install CVAD Delivery Controller
+    hosts: cvad_delivery_controllers
+    gather_facts: true
+    vars:
+      cvad_delivery_controller_version: 2103
+      cvad_delivery_controller_certificate_name: wildcard2021
+    roles:
+      - ctxcommunity.common.secure_winrm
+      - ctxcommunity.common.set_power_plan
+      - ctxcommunity.windows.defender
+      - ctxcommunity.windows.dotnet_48_framework_runtime
+      - ctxcommunity.cvad.install_delivery_controller_iso
+      - ctxcommunity.windows.updates
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

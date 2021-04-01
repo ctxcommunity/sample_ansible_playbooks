@@ -1,0 +1,16 @@
+---
+  - name: Install CVAD StoreFront Server
+    hosts: cvad_storefront_servers
+    gather_facts: true
+    vars:
+      cvad_storefront_version: 2103
+    roles:
+      - ctxcommunity.common.secure_winrm
+      - ctxcommunity.common.set_power_plan
+      - ctxcommunity.windows.defender
+      - ctxcommunity.windows.dotnet_48_framework_runtime
+      - ctxcommunity.cvad.install_storefront_iso
+      - ctxcommunity.windows.updates
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

@@ -1,0 +1,16 @@
+---
+  - name: Install Workspace Environment Management Agent
+    hosts: cvad_master_image
+    gather_facts: true
+    vars:
+      wem_agent_version: 2103
+    roles:
+      - ctxcommunity.common.secure_winrm
+      - ctxcommunity.common.set_power_plan
+      - ctxcommunity.windows.defender
+      - ctxcommunity.windows.dotnet_48_framework_runtime
+      - ctxcommunity.wem.install_agent
+      - ctxcommunity.windows.updates
+
+    vars_files:
+      - "pwd_vars/{{ runas_admin }}.yml"

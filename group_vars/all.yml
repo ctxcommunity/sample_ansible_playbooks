@@ -1,0 +1,12 @@
+---
+  ansible_port: 5986
+  ansible_connection: winrm
+  ansible_winrm_transport: kerberos
+  ansible_winrm_server_cert_validation: ignore
+  ansible_winrm_kerberos_delegation: True
+
+  smb_location: \\file1\automation
+
+  cvad_delivery_controller_certificate_name: wildcard2021
+  cvad_director_certificate_name: wildcard2021
+  cvad_storefront_certificate_name: wildcard2021
