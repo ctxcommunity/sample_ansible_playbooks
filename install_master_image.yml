@@ -3,18 +3,33 @@
     hosts: cvad_master_image
     gather_facts: true
     vars:
-      cvad_vda_version: 2103
+      # cvad_vda_version: 2103
       wem_agent_version: 2103
-      pvs_device_version: 2012
+      # pvs_device_version: 2012
     roles:
       - ctxcommunity.common.secure_winrm
       - ctxcommunity.common.set_power_plan
       - ctxcommunity.windows.defender
       - ctxcommunity.windows.dotnet_48_framework_runtime
       - ctxcommunity.cvad.install_vda_iso
+      - ctxcommunity.cvad.install_session_recording_agent_iso
+      - ctxcommunity.cvad.install_session_recording_player_iso
       - ctxcommunity.wem.install_agent
       - ctxcommunity.pvs.install_device_iso
       - ctxcommunity.windows.updates
 
     vars_files:
       - "pwd_vars/{{ runas_admin }}.yml"
+
+    tasks:
+      # Install Latest Version Notepad ++
+        - name: Install Notepad ++
+          win_chocolatey:
+            name: notepadplusplus
+            state: latest
+
+      # Install Latest Google Chrome
+        - name: Install Google Chrome
+          win_chocolatey:
+            name: googlechrome
+            state: latest

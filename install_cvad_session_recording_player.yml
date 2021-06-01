@@ -3,7 +3,7 @@
     hosts: cvad_master_image
     gather_facts: true
     vars:
-      cvad_session_recording_player_version: 2103
+      cvad_session_recording_player_version: 1912 LTSR CU3
     roles:
       - ctxcommunity.cvad.install_session_recording_player_iso
 

@@ -3,7 +3,7 @@
     hosts: cvad_delivery_controllers
     gather_facts: true
     vars:
-      cvad_delivery_controller_version: 2103
+      cvad_delivery_controller_version: 1912 LTSR CU3
       cvad_delivery_controller_certificate_name: wildcard2021
     roles:
       - ctxcommunity.common.secure_winrm

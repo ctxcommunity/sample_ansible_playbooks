@@ -3,7 +3,7 @@
     hosts: cvad_director_servers
     gather_facts: true
     vars:
-      cvad_director_version: 2103
+      cvad_director_version: 1912 LTSR CU3
     roles:
       - ctxcommunity.common.secure_winrm
       - ctxcommunity.common.set_power_plan

@@ -3,8 +3,8 @@
     hosts: pvs_servers
     gather_facts: true
     vars:
-      pvs_console_version: 2012
-      pvs_server_version: 2012
+      pvs_console_version: 1912 LTSR CU3
+      pvs_server_version: 1912 LTSR CU3
     roles:
       - ctxcommunity.common.secure_winrm
       - ctxcommunity.common.set_power_plan
@@ -12,7 +12,7 @@
       - ctxcommunity.windows.dotnet_48_framework_runtime
       - ctxcommunity.pvs.install_console_iso
       - ctxcommunity.pvs.install_server_iso
-      - ctxcommunity.windows.updates
+      #- ctxcommunity.windows.updates
 
     vars_files:
       - "pwd_vars/{{ runas_admin }}.yml"
