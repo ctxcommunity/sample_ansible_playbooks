@@ -1,0 +1,9 @@
+/pwd_vars/*
+!/pwd_vars/_template.yml
+/host_vars/*
+!host_vars/_template.yml
+.DS_Store
+hosts
+/roles/app_liquit_agent/files/*.xml
+/roles/app_liquit_package_deployments
+/collections
